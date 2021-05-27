@@ -46,6 +46,14 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>layout the grid</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>layout grid to send</string>
+	<key>NSContactsUsageDescription</key>
+	<string>layout for contacts</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

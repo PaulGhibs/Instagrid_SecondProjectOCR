@@ -15,7 +15,7 @@
 		610D8B03264D9A0A00CD38C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610D8B01264D9A0A00CD38C3 /* LaunchScreen.storyboard */; };
 		610D8B0C264D9A4700CD38C3 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 610D8B0A264D9A4700CD38C3 /* Delm-Medium.otf */; };
 		610D8B0D264D9A4700CD38C3 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 610D8B0B264D9A4700CD38C3 /* ThirstySoftRegular.otf */; };
-		61E39F972656F21500A9268D /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E39F962656F21500A9268D /* Blur.swift */; };
+		6146ACE0265D4D9100280BF2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6146ACDF265D4D9100280BF2 /* ShareViewController.swift */; };
 		61E39F992656F46700A9268D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E39F982656F46700A9268D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		610D8B04264D9A0A00CD38C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		610D8B0A264D9A4700CD38C3 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		610D8B0B264D9A4700CD38C3 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
-		61E39F962656F21500A9268D /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
+		6146ACDF265D4D9100280BF2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		61E39F982656F46700A9268D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,10 +64,10 @@
 		610D8AF5264D9A0900CD38C3 /* P4_01_Xcode */ = {
 			isa = PBXGroup;
 			children = (
+				61E39F902656F16400A9268D /* Resources */,
 				61E39F932656F1A700A9268D /* Controllers */,
 				61E39F922656F19A00A9268D /* Model */,
 				61E39F912656F18500A9268D /* View */,
-				61E39F902656F16400A9268D /* Resources */,
 				610D8B04264D9A0A00CD38C3 /* Info.plist */,
 			);
 			path = P4_01_Xcode;
@@ -78,9 +78,9 @@
 			children = (
 				610D8AF6264D9A0900CD38C3 /* AppDelegate.swift */,
 				610D8AF8264D9A0900CD38C3 /* SceneDelegate.swift */,
+				610D8B01264D9A0A00CD38C3 /* LaunchScreen.storyboard */,
 				610D8AFF264D9A0A00CD38C3 /* Assets.xcassets */,
-				610D8B0A264D9A4700CD38C3 /* Delm-Medium.otf */,
-				610D8B0B264D9A4700CD38C3 /* ThirstySoftRegular.otf */,
+				61E39F9A2656F7B300A9268D /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -88,9 +88,7 @@
 		61E39F912656F18500A9268D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				610D8B01264D9A0A00CD38C3 /* LaunchScreen.storyboard */,
 				610D8AFC264D9A0900CD38C3 /* Main.storyboard */,
-				61E39F962656F21500A9268D /* Blur.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				610D8AFA264D9A0900CD38C3 /* ViewController.swift */,
+				6146ACDF265D4D9100280BF2 /* ShareViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		61E39F9A2656F7B300A9268D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				610D8B0A264D9A4700CD38C3 /* Delm-Medium.otf */,
+				610D8B0B264D9A4700CD38C3 /* ThirstySoftRegular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +129,7 @@
 				610D8AEF264D9A0900CD38C3 /* Sources */,
 				610D8AF0264D9A0900CD38C3 /* Frameworks */,
 				610D8AF1264D9A0900CD38C3 /* Resources */,
+				6146ACDE265D4B2A00280BF2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -178,13 +187,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6146ACDE265D4B2A00280BF2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		610D8AEF264D9A0900CD38C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6146ACE0265D4D9100280BF2 /* ShareViewController.swift in Sources */,
 				61E39F992656F46700A9268D /* Extensions.swift in Sources */,
-				61E39F972656F21500A9268D /* Blur.swift in Sources */,
 				610D8AFB264D9A0900CD38C3 /* ViewController.swift in Sources */,
 				610D8AF7264D9A0900CD38C3 /* AppDelegate.swift in Sources */,
 				610D8AF9264D9A0900CD38C3 /* SceneDelegate.swift in Sources */,
@@ -344,7 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ghb.P4-01-Xcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,7 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ghb.P4-01-Xcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

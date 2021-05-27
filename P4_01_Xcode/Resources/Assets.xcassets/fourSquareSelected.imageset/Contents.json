@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Selected.png",
+      "filename" : "fourSquareSelected.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Selected@2x.png",
+      "filename" : "fourSquareSelected@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Selected@3x.png",
+      "filename" : "fourSquareSelected@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
