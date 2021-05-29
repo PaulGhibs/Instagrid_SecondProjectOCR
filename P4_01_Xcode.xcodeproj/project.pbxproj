@@ -15,7 +15,6 @@
 		610D8B03264D9A0A00CD38C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610D8B01264D9A0A00CD38C3 /* LaunchScreen.storyboard */; };
 		610D8B0C264D9A4700CD38C3 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 610D8B0A264D9A4700CD38C3 /* Delm-Medium.otf */; };
 		610D8B0D264D9A4700CD38C3 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 610D8B0B264D9A4700CD38C3 /* ThirstySoftRegular.otf */; };
-		6146ACE0265D4D9100280BF2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6146ACDF265D4D9100280BF2 /* ShareViewController.swift */; };
 		61E39F992656F46700A9268D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E39F982656F46700A9268D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		610D8B04264D9A0A00CD38C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		610D8B0A264D9A4700CD38C3 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		610D8B0B264D9A4700CD38C3 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
-		6146ACDF265D4D9100280BF2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		61E39F982656F46700A9268D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				610D8AFA264D9A0900CD38C3 /* ViewController.swift */,
-				6146ACDF265D4D9100280BF2 /* ShareViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6146ACE0265D4D9100280BF2 /* ShareViewController.swift in Sources */,
 				61E39F992656F46700A9268D /* Extensions.swift in Sources */,
 				610D8AFB264D9A0900CD38C3 /* ViewController.swift in Sources */,
 				610D8AF7264D9A0900CD38C3 /* AppDelegate.swift in Sources */,

@@ -39,8 +39,4 @@ extension UIView {
 }
 
 
-extension ViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-   
-    
 
-}
