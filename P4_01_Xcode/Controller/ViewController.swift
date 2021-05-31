@@ -7,14 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
-    
-    /// MARK: - Property
-    var picture: UIButton!
-    var swipeUp: UISwipeGestureRecognizer?
-    
+class ViewController: UIViewController {
+        
     /// MARK: - Outlets
-    @IBOutlet weak var swipeView: UIStackView!
+    @IBOutlet weak var swipeView: UIView!
     @IBOutlet weak var grids: UIView!
     @IBOutlet var addPhoto: [UIButton]!
     @IBOutlet var layoutChoice: [UIButton]!
@@ -29,29 +25,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
-
     @IBAction func layoutAction(_ sender: UIButton) {
         makeTheGrid(withLayoutChoice: sender)
         selectedLayout(withLayoutChoice: sender)
     }
     
     /// MARK: - Functions
-      
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe))
         grids.addGestureRecognizer(swipeUp!)
         NotificationCenter.default.addObserver(self, selector: #selector(orientation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
   
-    @objc func orientation() {
-        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
-            swipeUp?.direction = .left
-        } else {
-            swipeUp?.direction = .up
-        }
-    }
+   
 
     /// functions for binding  layouts and grids
     // func for showing the grids available
@@ -90,46 +77,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         default: break
         }
     }
-    
-    
-    /// Importing and rendering the picture from gallery
-    
-    // func to import pict from galery
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let photo = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        picture.setImage(photo, for: .normal)
-        picture.imageView?.contentMode = .scaleAspectFill
-        picker.dismiss(animated: true, completion: nil)
-    }
-    // Function to transform the UIView into an UIImage, in order to share the UIImage
-    private func imageView (view: UIView) -> UIImage {
-        let image = UIGraphicsImageRenderer ( size: grids.bounds.size )
-        return image.image { _ in grids.drawHierarchy(in: grids.bounds, afterScreenUpdates: true) }
-    }
-    
-    /// Share View Controller
-    // share function with transform of swip stack wiew
-    
-    @objc func shareSwipe() {
-        let transform : CGAffineTransform
-        if swipeUp?.direction == .up { transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height) } else { transform = CGAffineTransform(translationX: -UIScreen.main.bounds.height, y: -UIScreen.main.bounds.height) }
-        UIView.animate(withDuration: 1, animations: {[self] in
-            grids.transform = transform
-        }, completion: {_ in
-            self.shareSwipe()
-        })
-    }
-    // show activity controller to share the grid
-    func showActivityControl() {
-        let gridToShare = [imageView(view: grids)]
-        let activityController = UIActivityViewController(activityItems: gridToShare, applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = view
-        present(activityController, animated: true, completion: nil)
-        activityController.completionWithItemsHandler = { _, _, _, _ in
-            UIView.animate(withDuration: 0.5) {self.grids.transform = .identity}
-        }
-    }
-
 }
 
 
