@@ -62,10 +62,10 @@
 		610D8AF5264D9A0900CD38C3 /* P4_01_Xcode */ = {
 			isa = PBXGroup;
 			children = (
-				61E39F902656F16400A9268D /* Resources */,
-				61E39F932656F1A700A9268D /* Controller */,
 				61E39F922656F19A00A9268D /* Model */,
 				61E39F912656F18500A9268D /* View */,
+				61E39F932656F1A700A9268D /* Controller */,
+				61E39F902656F16400A9268D /* Resources */,
 				610D8B04264D9A0A00CD38C3 /* Info.plist */,
 			);
 			path = P4_01_Xcode;
@@ -200,7 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -362,6 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SL9XYHXV26;
 				INFOPLIST_FILE = P4_01_Xcode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SL9XYHXV26;
 				INFOPLIST_FILE = P4_01_Xcode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

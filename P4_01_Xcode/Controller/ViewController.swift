@@ -8,8 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-        
-    /// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var swipeView: UIView!
     @IBOutlet weak var grids: UIView!
     @IBOutlet var addPhoto: [UIButton]!
@@ -17,8 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var selectFirstlayout: UIImageView!
     @IBOutlet weak var selectSecondLayout: UIImageView!
     @IBOutlet weak var selectThirdLayout: UIImageView!
-    
-    /// MARK: - Actions
+    // MARK: - Actions
     @IBAction func addPhotoAction(_ sender: UIButton) {
         picture = sender
         let picker = UIImagePickerController()
@@ -29,18 +27,15 @@ class ViewController: UIViewController {
         makeTheGrid(withLayoutChoice: sender)
         selectedLayout(withLayoutChoice: sender)
     }
-    
-    /// MARK: - Functions
+
+    // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe))
         grids.addGestureRecognizer(swipeUp!)
         NotificationCenter.default.addObserver(self, selector: #selector(orientation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
-  
-   
-
-    /// functions for binding  layouts and grids
+    /// Functions for binding  layouts and grids
     // func for showing the grids available
     private func makeTheGrid(withLayoutChoice: UIButton) {
         switch withLayoutChoice {
@@ -54,22 +49,19 @@ class ViewController: UIViewController {
             addPhoto[1].isHidden = false
             addPhoto[3].isHidden = false
         default: break
-            
         }
     }
     // func to display or not the selected button above the layout button
-    private func selectedLayout(withLayoutChoice : UIButton) {
+    private func selectedLayout(withLayoutChoice: UIButton) {
         switch withLayoutChoice {
         case layoutChoice[0] :
             selectThirdLayout.isHidden = false
             selectFirstlayout.isHidden = true
             selectSecondLayout.isHidden = true
-            
         case layoutChoice[1] :
             selectSecondLayout.isHidden = false
             selectFirstlayout.isHidden = true
             selectThirdLayout.isHidden = true
-            
         case layoutChoice[2] :
             selectFirstlayout.isHidden = false
             selectSecondLayout.isHidden = true
@@ -78,8 +70,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
-    
-    
-    
