@@ -11,15 +11,15 @@ import UIKit
 // MARK: - Property
 
 var picture: UIButton!
-var swipeUp: UISwipeGestureRecognizer?
+var swipe: UISwipeGestureRecognizer?
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     /// Importing and rendering the picture from gallery
     @objc func orientation() {
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
-            swipeUp?.direction = .left
+            swipe?.direction = .left
         } else {
-            swipeUp?.direction = .up
+            swipe?.direction = .up
         }
     }
     // func to import pict from galery
@@ -31,14 +31,14 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
     }
     // Function to transform the UIView into an UIImage, in order to share the UIImage
     private func imageView (view: UIView) -> UIImage {
-        let image = UIGraphicsImageRenderer( size: grids.bounds.size )
-        return image.image { _ in grids.drawHierarchy(in: grids.bounds, afterScreenUpdates: true) }
+        let imageRenderer = UIGraphicsImageRenderer( size: grids.bounds.size )
+        return imageRenderer.image { _ in grids.drawHierarchy(in: grids.bounds, afterScreenUpdates: true) }
     }
     /// Share View Controller
     // share function with transform of swip stack wiew
     @objc func shareSwipe() {
         let transform: CGAffineTransform
-        if swipeUp?.direction == .up { transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
+        if swipe?.direction == .up { transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
         } else {
             transform = CGAffineTransform(translationX: -UIScreen.main.bounds.height, y: -UIScreen.main.bounds.height)
         }
