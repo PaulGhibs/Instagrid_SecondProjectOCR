@@ -13,9 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var grids: UIView!
     @IBOutlet var addPhoto: [UIButton]!
     @IBOutlet var layoutChoice: [UIButton]!
-    
-    var selected = true
-    
+
     // MARK: - Actions
     @IBAction func addPhotoAction(_ sender: UIButton) {
         picture = sender
@@ -25,23 +23,23 @@ class ViewController: UIViewController {
     }
     @IBAction func layoutAction(_ sender: UIButton) {
         makeTheGrid(withLayoutChoice: sender)
-            if selected {
-                sender.setBackgroundImage(UIImage(named: "Selected"), for: .highlighted)
-                sender.adjustsImageWhenHighlighted = true
-                  } else {
-                    sender.adjustsImageWhenHighlighted = false
-                    selected = false
-                    }
+           for btn in layoutChoice {
+           if btn == sender {
+                sender.setImage(#imageLiteral(resourceName: "Selected"), for: .normal)
+           } else {
+            btn.setImage(nil, for: .normal)
+           }
         }
+    }
+
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         swipe = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipe))
         grids.addGestureRecognizer(swipe!)
-        NotificationCenter.default.addObserver(self, selector: #selector(orientation), name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientation),
+                                               name: UIDevice.orientationDidChangeNotification, object: nil)
     }
-    /// Functions for binding  layouts and grids
-   
     // func for showing the grids available
     private func makeTheGrid(withLayoutChoice: UIButton) {
         switch withLayoutChoice {

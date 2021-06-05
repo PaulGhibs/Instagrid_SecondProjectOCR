@@ -3,7 +3,7 @@
 //  P4_01_Xcode
 //
 //  Created by Paul Ghibeaux on 13/05/2021.
-//
+// swiftlint:disable all
 
 import UIKit
 

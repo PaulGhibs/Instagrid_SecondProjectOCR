@@ -62,7 +62,6 @@
 		610D8AF5264D9A0900CD38C3 /* P4_01_Xcode */ = {
 			isa = PBXGroup;
 			children = (
-				61E39F922656F19A00A9268D /* Model */,
 				61E39F912656F18500A9268D /* View */,
 				61E39F932656F1A700A9268D /* Controller */,
 				61E39F902656F16400A9268D /* Resources */,
@@ -89,13 +88,6 @@
 				610D8AFC264D9A0900CD38C3 /* Main.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		61E39F922656F19A00A9268D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		61E39F932656F1A700A9268D /* Controller */ = {

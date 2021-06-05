@@ -23,7 +23,8 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         }
     }
     // func to import pict from galery
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let photo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         picture.setImage(photo, for: .normal)
         picture.imageView?.contentMode = .scaleAspectFill
